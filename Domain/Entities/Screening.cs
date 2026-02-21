@@ -10,4 +10,5 @@ public class Screening
     public DateTime Screening_time { get; set; }
     public decimal Ticket_price { get; set; }
     public int Available_seats { get; set; }
+    public int MovieId { get; set; }
 }

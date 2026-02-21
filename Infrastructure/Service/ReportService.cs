@@ -71,11 +71,11 @@ public class ReportService : IReportService
             list.Add(new Screening
             {
                 Id = reader.GetInt32(0),
-                MovieId = reader.GetInt32(1),
-                TheaterId = reader.GetInt32(2),
-                ScreeningTime = reader.GetDateTime(3),
-                TicketPrice = reader.GetDecimal(4),
-                AvailableSeats = reader.GetInt32(5)
+                Movie_id = reader.GetInt32(1),
+                Theater_id = reader.GetInt32(2),
+                Screening_time = reader.GetDateTime(3),
+                Ticket_price = reader.GetDecimal(4),
+                Available_seats = reader.GetInt32(5)
             });
         }
 
@@ -126,11 +126,11 @@ public class ReportService : IReportService
             list.Add(new Screening
             {
                 Id = reader.GetInt32(0),
-                MovieId = reader.GetInt32(1),
-                TheaterId = reader.GetInt32(2),
-                ScreeningTime = reader.GetDateTime(3),
-                TicketPrice = reader.GetDecimal(4),
-                AvailableSeats = reader.GetInt32(5)
+                Movie_id = reader.GetInt32(1),
+                Theater_id = reader.GetInt32(2),
+                Screening_time = reader.GetDateTime(3),
+                Ticket_price = reader.GetDecimal(4),
+                Available_seats = reader.GetInt32(5)
             });
         }
 

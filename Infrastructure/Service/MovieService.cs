@@ -88,4 +88,30 @@ public class MovieService : IMovieService
         cmd.Parameters.AddWithValue("id", id);
         cmd.ExecuteNonQuery();
     }
+
+    public Movie? GetById(int id)
+    {
+        using var connection = new NpgsqlConnection(_connectionString);
+        connection.Open();
+
+        var cmd = new NpgsqlCommand("SELECT * FROM movies WHERE id=@id", connection);
+        cmd.Parameters.AddWithValue("id", id);
+
+        using var reader = cmd.ExecuteReader();
+        if (reader.Read())
+        {
+            return new Movie
+            {
+                Id = reader.GetInt32(0),
+                Title = reader.GetString(1),
+                Director = reader.GetString(2),
+                Year = reader.GetInt32(3),
+                Duration = reader.GetInt32(4),
+                Genre = reader.GetString(5),
+                Description = reader.GetString(6)
+            };
+        }
+
+        return null;
+    }
 }

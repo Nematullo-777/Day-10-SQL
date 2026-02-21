@@ -6,7 +6,7 @@ namespace Infrastructure.Infrastructure;
 public interface IMovieService
 {
     List<Movie> GetAll();
-    Movie GetById(int id);
+    Movie? GetById(int id);
     void Add(Movie movie);
     void Update(Movie movie);
     void Delete(int id);
