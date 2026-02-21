@@ -5,9 +5,9 @@ namespace Domain.Entities;
 public class Screening
 {
     public int Id { get; set; }
-    public int MovieId { get; set; }
-    public int TheaterId { get; set; }
-    public DateTime ScreeningTime { get; set; }
-    public decimal TicketPrice { get; set; }
-    public int AvailableSeats { get; set; }
+    public int Movie_id { get; set; }
+    public int Theater_id { get; set; }
+    public DateTime Screening_time { get; set; }
+    public decimal Ticket_price { get; set; }
+    public int Available_seats { get; set; }
 }
