@@ -8,7 +8,7 @@ using Npgsql;
 public class MovieService : IMovieService
 {
     private readonly string _connectionString =
-        "Host=localhost;Port=5432;Username=postgres;Password=1234;Database=cinema_db";
+        @"Host=localhost;Port=5432;Username=postgres;Database=Cinema_db;Password=nemat1409";
 
     public List<Movie> GetAll()
     {

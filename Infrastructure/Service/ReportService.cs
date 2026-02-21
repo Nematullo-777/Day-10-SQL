@@ -8,8 +8,7 @@ namespace Infrastructure.Service;
 public class ReportService : IReportService
 {
     private readonly string _connectionString =
-        "Host=localhost;Port=5432;Username=postgres;Password=1234;Database=cinema_db";
-
+        @"Host=localhost;Port=5432;Username=postgres;Database=Cinema_db;Password=nemat1409";
     public List<Movie> GetMoviesByGenre(string genre)
     {
         var list = new List<Movie>();
