@@ -50,7 +50,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Фильм с максимальной продолжительностью");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("ID | Title | Duration (min)");
         Console.WriteLine("------------------------------------------------------------");
@@ -76,7 +76,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Фильмы в нескольких кинотеатрах");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("Movie Title | Theaters Count");
         Console.WriteLine("------------------------------------------------------------");
@@ -104,7 +104,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine($"📌 Кинотеатры с количеством сеансов > {minSessions}");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("Theater Name | Sessions Count");
         Console.WriteLine("------------------------------------------------------------");
@@ -130,7 +130,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Выручка по фильмам");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("Movie Title | Total Revenue");
         Console.WriteLine("------------------------------------------------------------");
@@ -155,7 +155,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Сеансы с ценой выше средней");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("ID | Movie | Price | Screening Time");
         Console.WriteLine("------------------------------------------------------------");
@@ -181,7 +181,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Проданные билеты по сеансам");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("Screening ID | Movie | Tickets Sold");
         Console.WriteLine("------------------------------------------------------------");
@@ -206,7 +206,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Средняя цена билета по кинотеатрам");
+        Console.WriteLine();
         Console.WriteLine("------------------------------------------------------------");
 
         while (reader.Read())
@@ -228,7 +228,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Фильмы с длительностью выше средней");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine($"{reader.GetString(0)} | {reader.GetInt32(1)}");
@@ -255,7 +255,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine($"📌 Кинотеатры с фильмом \"{movieTitle}\"");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine(reader.GetString(0));
@@ -275,7 +275,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Количество сеансов по кинотеатрам");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine($"{reader.GetString(0)} | {reader.GetInt64(1)}");
@@ -296,7 +296,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Средняя стоимость билета по фильмам");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine($"{reader.GetString(0)} | {Math.Round(reader.GetDecimal(1), 2)}");
@@ -317,7 +317,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Все проданные билеты");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine($"{reader.GetInt32(0)} | {reader.GetString(1)} | {reader.GetString(2)} | {reader.GetString(3)} | {reader.GetString(4)} | {reader.GetDecimal(5)}");
@@ -340,7 +340,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Кинотеатры без ближайших сеансов");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine(reader.GetString(0));
@@ -359,7 +359,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Фильмы по выбранным годам");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine($"{reader.GetString(0)} | {reader.GetInt32(1)}");
@@ -381,7 +381,7 @@ public class MovieService : IMovieService
 
         using var reader = cmd.ExecuteReader();
 
-        Console.WriteLine("📌 Сеансы с большим количеством свободных мест");
+        Console.WriteLine();
 
         while (reader.Read())
             Console.WriteLine($"{reader.GetInt32(0)} | {reader.GetString(1)} | {reader.GetInt32(2)} | {reader.GetDateTime(3):dd.MM.yyyy HH:mm}");
