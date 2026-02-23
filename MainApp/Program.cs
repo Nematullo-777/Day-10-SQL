@@ -11,41 +11,15 @@ foreach (var m in movies1)
 reportService.GetScreeningCountPerMovie();
 reportService.GetFullScreeningInfo();
 var movieService = new MovieService();
-
-while (true)
-{
-    Console.WriteLine("1. Показать фильмы");
-    Console.WriteLine("2. Добавить фильм");
-    Console.WriteLine("0. Выход");
-
-    var choice = Console.ReadLine();
-
-    switch (choice)
-    {
-        case "1":
-            var movies = movieService.GetAll();
-            foreach (var m in movies)
-                Console.WriteLine($"{m.Id} | {m.Title} | {m.Year}");
-            break;
-
-        case "2":
-            Console.Write("Название: ");
-            var title = Console.ReadLine();
-
-            movieService.Add(new Movie
-            {
-                Title = title,
-                Director = "Unknown",
-                Year = 2025,
-                Duration = 120,
-                Genre = "Drama",
-                Description = "Test"
-            });
-
-            Console.WriteLine("Фильм добавлен!");
-            break;
-
-        case "0":
-            return;
-    }
-}
+movieService.GetMovieWithMaxDuration();
+movieService.AddMovie(new Movie { Title = "New Movie", Director = "Unknown", Year = 2025, Duration = 120, Genre = "Action", Description = "A new action movie." });
+movieService.Delete(1);
+movieService.Update(new Movie { Id = 2, Title = "Updated Movie", Director = "Updated Director", Year = 2024, Duration = 130, Genre = "Thriller", Description = "An updated thriller movie." });
+movieService.GetAll();
+movieService.GetById(2);
+movieService.GetAllTicketsDetailed();
+movieService.GetAveragePricePerTheater();
+movieService.GetAverageTicketPricePerMovie();
+movieService.GetMoviesAboveAverageDuration();
+movieService.GetMoviesByYears(new List<int> { 1994, 1999, 2008, 2014 });
+movieService.GetMoviesInMultipleTheaters();
